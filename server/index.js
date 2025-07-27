@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import app from './app.js';
+import mongoDB from '../server/src/config/db.js'
 
 console.log("Starting server initialization...");
 
@@ -21,6 +22,7 @@ const init = async () => {
     console.log('Initializing server...');
     try {
         startServer()
+        mongoDB();
     } catch (error) {
         console.error("Initialization failed:", error);
         process.exit(1);
